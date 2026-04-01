@@ -1,0 +1,71 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+## 项目使用的一些库
+
+-  UI组件库ElementPlus
+
+-  前端框架Vue3
+
+-  网络请求axios
+
+-  状态管理pinia
+
+## 样式规范
+
+- 样式style标签要有scope 和 lang="scss"
+
+- 全局样式在styles文件夹下面,尽量优先使用
+
+
+## 逻辑处理
+- 如果设计到有用户的头像,默认是 import defaultAvatar from '@/assets/默认头像.png'; 
+
+- 在需要用一些图标的时候可以使用emoji标签来代替 优先处理
+
+- 已经在main.js完成了全局注册ElementPlusIconsVue的注册
+
+- 表单在使用图标的时候要遵循elementuiplus的使用方式 而不是老版本的
+
+- HTML绑定属性的时候优先采用 可选链操作符 ?. 而不是 &&来处理
+
+- 如果需要做图片的显示的时候,如果图片出现异常了 可以从@/assets/图片失效.png
+
+- 在处理一些:class根据不同状态绑定的时候,需要使用"方法计算类绑定"的方式
+
+- 在使用状态的时候 按下面的方式使用
+    import { useCommonStore } from '@/store';  
+    const commonStore = useCommonStore();
+    // 计算属性
+    const Token = computed(() => commonStore.Token)
+    const UserInfo = computed(() => commonStore.UserInfo)
+    const RoleType = computed(() => commonStore.RoleType)
+    const UserId = computed(() => commonStore.UserId)
+
+- 在使用PaginationBox分页组件的时候 data就是一个数组类型
+
+- 遵循《代码简洁之道》
+
+- 优先使用 async/await 而不是回调
+
+- 如果我后端给你的数据结构中有富文本格式的,请使用v-html来处理
+- 在进行网络请求的时候需要引入 
+    import { Post } from '@/api/http';
+
+ ## 常见的使用
+
+
+
+
+
+
+
+
+
+
+
+
+
+
